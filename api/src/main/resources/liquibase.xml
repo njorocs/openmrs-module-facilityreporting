@@ -32,7 +32,9 @@
             <column name="mapping" type="varchar(255)">
                 <constraints nullable="false" unique="true"></constraints>
             </column>
-
+            <column name="created_by" type="int">
+                <constraints nullable="false"/>
+            </column>
             <column name="date_created" type="datetime">
                 <constraints nullable="false"/>
             </column>
@@ -74,6 +76,9 @@
             </column>
             <column name="mapping" type="varchar(255)">
                 <constraints nullable="false" unique="true"></constraints>
+            </column>
+            <column name="created_by" type="int">
+                <constraints nullable="false"/>
             </column>
             <column name="date_created" type="datetime">
                 <constraints nullable="false"/>
@@ -118,6 +123,9 @@
             <column name="mapping" type="varchar(255)">
                 <constraints nullable="false" unique="true"></constraints>
             </column>
+            <column name="created_by" type="int">
+                <constraints nullable="false"/>
+            </column>
             <column name="date_created" type="datetime">
                 <constraints nullable="false"/>
             </column>
@@ -146,7 +154,7 @@
             <column name="id" type="int" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="indicator_id" type="int">
+            <column name="dataset_id" type="int">
                 <constraints nullable="false" unique="false"></constraints>
             </column>
             <column name="report_id" type="int">
@@ -161,6 +169,9 @@
             <column name="value" type="varchar(255)">
                 <constraints nullable="true" unique="false"></constraints>
             </column>
+            <column name="created_by" type="int">
+                <constraints nullable="false"/>
+            </column>
             <column name="date_created" type="datetime">
                 <constraints nullable="false"/>
             </column>
@@ -174,6 +185,6 @@
             <column name="voided_reason" type="varchar(255)"/>
         </createTable>
         <addForeignKeyConstraint baseTableName="kenyaemr_facilityreporting_data" baseColumnNames="report_id" constraintName="kenyaemr_facilityreporting_report_data_constraint" referencedTableName="kenyaemr_facilityreporting_report" referencedColumnNames="id" />
-        <addForeignKeyConstraint baseTableName="kenyaemr_facilityreporting_data" baseColumnNames="indicator_id" constraintName="kenyaemr_facilityreporting_indicator_data_constraint" referencedTableName="kenyaemr_facilityreporting_indicator" referencedColumnNames="id" />
+        <addForeignKeyConstraint baseTableName="kenyaemr_facilityreporting_data" baseColumnNames="dataset_id" constraintName="kenyaemr_facilityreporting_dataset_constraint" referencedTableName="kenyaemr_facilityreporting_dataset" referencedColumnNames="id" />
     </changeSet>
 </databaseChangeLog>
